@@ -32,7 +32,9 @@
 		"@tresjs/cientos": "^3.9.0",
 		"@tresjs/nuxt": "^3.0.2",
 		"@tresjs/post-processing": "^0.7.1",
+		"@types/papaparse": "^5.3.14",
 		"gsap": "^3.12.5",
+		"papaparse": "^5.4.1",
 		"pinia": "^2.2.0",
 		"three": "^0.167.0"
 	},

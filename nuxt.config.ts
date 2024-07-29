@@ -3,8 +3,15 @@ export default defineNuxtConfig({
 		"@vueuse/nuxt",
 		"@unocss/nuxt",
 		"nuxt-svgo",
-		"@nuxt/eslint"
+		"@nuxt/eslint",
+		'@tresjs/nuxt',
 	],
+	devtools: {
+		enabled: true,
+		timeline: {
+			enabled: true,
+		},
+	},
 	app: {
 		head: {
 			title: "Nuxtor",
@@ -64,5 +71,6 @@ export default defineNuxtConfig({
 		config: {
 			standalone: false
 		}
-	}
+	},
+
 });

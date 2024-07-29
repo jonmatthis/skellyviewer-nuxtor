@@ -12,6 +12,9 @@
 				</button>
 			</div>
 			<div hidden lg="flex gap-x-12">
+        <NavLink to="/viewport3d">
+          3D Viewport
+        </NavLink>
 				<NavLink to="/commands">
 					Commands
 				</NavLink>

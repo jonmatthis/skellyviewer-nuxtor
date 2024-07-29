@@ -23,6 +23,7 @@
 		"tauri:build:debug": "tauri build --debug"
 	},
 	"dependencies": {
+		"@pinia/nuxt": "^0.5.2",
 		"@tauri-apps/api": ">=2.0.0-beta.14",
 		"@tauri-apps/plugin-fs": "2.0.0-beta.6",
 		"@tauri-apps/plugin-notification": "2.0.0-beta.6",
@@ -31,6 +32,8 @@
 		"@tresjs/cientos": "^3.9.0",
 		"@tresjs/nuxt": "^3.0.2",
 		"@tresjs/post-processing": "^0.7.1",
+		"gsap": "^3.12.5",
+		"pinia": "^2.2.0",
 		"three": "^0.167.0"
 	},
 	"devDependencies": {

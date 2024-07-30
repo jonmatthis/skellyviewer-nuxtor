@@ -32,9 +32,8 @@ def read_csv(csvPath: str = FREEMOCAP_TEST_DATA_CSV_PATH):
         logger.error(f"File not found: {csvPath}")
         return {"error": f"File not found: {csvPath}"}
     df = pd.read_csv(csvPath)
-    df_json = df.to_json()
     logger.info(f"Read csv file with shape: {df.shape}")
-    return df_json
+    return df.to_csv()
 
 
 @app.websocket("/ws")

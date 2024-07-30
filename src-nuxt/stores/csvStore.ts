@@ -28,20 +28,16 @@ export const useCsvStore = defineStore('csvStore', ()=> {
             console.error(fetchError);
         }
     };
-    onMounted(async () => {
-        const homeDir = await path.homeDir();
-        const freemocapTestDataCsvPath = '/freemocap_data/recording_sessions/freemocap_test_data/freemocap_test_data_by_trajectory.csv';
-        if (await exists(freemocapTestDataCsvPath)) {console.log('File exists:', freemocapTestDataCsvPath);}
-        const contents = await readTextFile(freemocapTestDataCsvPath, { baseDir: BaseDirectory.Home });
-        console.log('File contents:', contents);
-        csvPath.value = freemocapTestDataCsvPath;
-        await loadCsv(csvPath.value);
-    });
 
+    const setPath = async (newPath: string) => {
+        csvPath.value = newPath;
+        console.log('CSV path set to:', csvPath.value);
+        await loadCsv(csvPath.value)
+    }
     return {
         csvPath,
         csvHeaders,
         csvRows,
-        loadCsv
+        setPath
     }
 })

@@ -15,7 +15,10 @@
         <NavLink to="/viewport3d">
           3D Viewport
         </NavLink>
-				<NavLink to="/commands">
+				<NavLink to="/select">
+					Select Recording Folder
+				</NavLink>
+        <NavLink to="/commands">
 					Commands
 				</NavLink>
 				<NavLink to="/notifications">

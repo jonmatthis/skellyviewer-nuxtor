@@ -5,8 +5,12 @@ import pandas as pd
 from pathlib import Path
 
 import logging
+
+from starlette.middleware.cors import CORSMiddleware
+
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
+
 
 
 FREEMOCAP_TEST_DATA_CSV_PATH = r"C:\Users\jonma\freemocap_data\recording_sessions\freemocap_test_data\freemocap_test_data_by_trajectory.csv"
@@ -18,6 +22,17 @@ async def lifespan_manager(app: FastAPI):
     logger.info("Shutting down FastAPI app")
 
 app = FastAPI(lifespan=lifespan_manager)
+origins = [
+   "http://localhost:3000",
+]
+
+app.add_middleware(
+   CORSMiddleware,
+   allow_origins=origins,
+   allow_credentials=True,
+   allow_methods=["*"],
+   allow_headers=["*"],
+)
 
 
 @app.get("/")
@@ -52,3 +67,20 @@ if __name__ == "__main__":
     uvicorn.run(app,
      host="localhost",
      port=8000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

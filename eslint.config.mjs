@@ -7,10 +7,7 @@ export default eslintConfig(
 		typescript: true,
 		vue: true,
 		unocss: true,
-		stylistic: {
-			indent: "tab",
-			quotes: "double"
-		},
+
 		rules: {
 			curly: "off",
 			"no-console": "off",

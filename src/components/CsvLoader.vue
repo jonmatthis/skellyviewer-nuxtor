@@ -13,7 +13,7 @@ const fetchData = async () => {
     console.log(`Response status: ${response.status}`)
     console.log(`Response JSON: ${JSON.stringify(response, null, 2)}`)
     if (!response.ok) {
-      throw new Error('Network response was not ok')
+      throw new Error(`Network response was not ok - Response status: ${response.status}`)
     }
 
     const result = await response.text()

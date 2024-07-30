@@ -32,3 +32,4 @@ export const useCsvStore = defineStore("csvStore", () => {
             csvData
         };
     });
+})

@@ -17,6 +17,7 @@ const fetchData = async () => {
     }
 
     const result = await response.text()
+    console.log(`Result: ${result}`)
     data.value = result
   } catch (err) {
     error.value = err

@@ -5,7 +5,8 @@ export default defineNuxtConfig({
         "nuxt-svgo",
         "@nuxt/eslint",
         '@tresjs/nuxt',
-        '@pinia/nuxt'
+        '@pinia/nuxt',
+        "nuxt-security"
     ],
 
     devtools: {

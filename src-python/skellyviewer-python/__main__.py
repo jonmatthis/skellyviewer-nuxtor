@@ -1,3 +1,4 @@
+import json
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, WebSocket
 import pandas as pd
@@ -25,7 +26,7 @@ def read_root():
     return {"Wowwee": "Zoweeeeee"}
 
 @app.get("/csv")
-def read_csv(csvPath: str = FREEMOCAP_TEST_DATA_CSV_PATH):
+def read_csv(csvPath: str = FREEMOCAP_TEST_DATA_CSV_PATH, orientation: str = "list" ):
     logger.info(f"Received request for route /csv with csvPath: {csvPath}")
 
     if not Path(csvPath).exists():
@@ -33,7 +34,9 @@ def read_csv(csvPath: str = FREEMOCAP_TEST_DATA_CSV_PATH):
         return {"error": f"File not found: {csvPath}"}
     df = pd.read_csv(csvPath)
     logger.info(f"Read csv file with shape: {df.shape}")
-    return df.to_csv()
+    # noinspection PyTypeChecker
+    df_dict = df.to_dict(orient=orientation)
+    return json.dumps(df_dict)
 
 
 @app.websocket("/ws")

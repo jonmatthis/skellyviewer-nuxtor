@@ -51,6 +51,7 @@
 		"bumpp": "^9.4.1",
 		"eslint": "8.57.0",
 		"nuxt": "^3.12.3",
+		"nuxt-security": "2.0.0-rc.9",
 		"nuxt-svgo": "^4.0.1",
 		"sass": "^1.77.6",
 		"typescript": "^5.5.3",
